@@ -1,11 +1,16 @@
 import React from 'react'; 
 import Home from "./Components/home";
 import "./App.css"
+import {Routes, Route} from "react-router-dom";
+import UserCard from './Components/userCard';
 
 const App = () => {
     return (
         <>
-            <Home />
+        <Routes>
+            <Route path='/' element={<Home />}/>
+            <Route path='/usercard' element={<UserCard />}/>
+        </Routes>
         </>
     )
 }

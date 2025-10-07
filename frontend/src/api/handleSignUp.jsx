@@ -1,10 +1,12 @@
 import React from 'react'; 
 
 export const handleSignUp = async (username, password, email) => {
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+
     try {
-        const res = await fetch("http://localhost:8080/signup", {
+        const res = await fetch(`${API_URL}/signup`, {
             method: "POST",
-            header: {
+            headers: {
                 "Content-Type" : "application/json",
             },
             body: JSON.stringify({
