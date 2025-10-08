@@ -14,7 +14,7 @@ var userCollection *mongo.Collection
 
 func ConnectDB() {
 	// ✅ Use mongo.Connect instead of mongo.NewClient (simpler and newer way)
-	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb://localhost:27017"))
+	client, err := mongo.Connect(context.TODO(), options.Client().ApplyURI("mongodb://host.docker.internal:27017"))
 	if err != nil {
 		log.Fatal("Error creating Mongo client:", err)
 	}
